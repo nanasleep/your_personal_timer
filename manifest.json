@@ -1,0 +1,22 @@
+{
+  "name": "Your Personal Timer",
+  "short_name": "Widget Timer",
+  "description": "Widget pengingat minum, istirahat, dan kata semangat untuk si dia!",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f0e6ff",
+  "theme_color": "#8a2be2",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "portrait"
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summer Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
+    </head>
+<body>
+    <div class="container">
+        <img src="chara.png" alt="Karakter Lucu" class="chara-character">
+        <h1>Your Personal Timer!</h1>
+
+        <div class="timer-section">
+            <p>Waktu kerja sisa: <span id="work-timer">00:00:00</span></p>
+            <p>Minum dalam: <span id="drink-timer">00:00</span></p>
+            <p>Istirahat dalam: <span id="break-timer">00:00</span></p>
+            <input type="number" id="manual-timer-input" placeholder="Set waktu kerja (menit)">
+            <button id="start-manual-timer">Mulai Kerja</button>
+            <button id="reset-timer">Reset</button>
+        </div>
+
+        <div id="popup-overlay" class="popup-overlay">
+            <div class="popup-content">
+                <span class="close-popup">&times;</span>
+                <p id="popup-message"></p>
+                <img src="chara.png" alt="chara Pop-up" class="popup-chara">
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio-start" src="audio/start.mp3" preload="auto"></audio>
+    <audio id="audio-drink" src="audio/drink.mp3" preload="auto"></audio>
+    <audio id="audio-break" src="audio/break.mp3" preload="auto"></audio>
+    <audio id="audio-finish" src="audio/finish.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
