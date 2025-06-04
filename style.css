@@ -1,7 +1,7 @@
 /* style.css */
 
 /* --- Import Google Fonts for Pixel Font --- */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* 'Press Start 2P' adalah salah satu font pixel paling populer */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 
 /* --- Reset & Basic Styles --- */
@@ -18,23 +18,26 @@ body {
     align-items: center;
     min-height: 100vh;
     background-color: #f0e6ff; /* Ungu pastel sangat muda */
-    overflow: hidden;
+    overflow: hidden; /* Penting untuk mencegah scroll saat dragging */
     font-size: 14px; /* Sesuaikan ukuran font default untuk font pixel */
+    /* Pastikan body tidak ada lebar tetap yang mengganggu */
 }
 
 /* --- Container Utama Widget --- */
 .container {
-    background-color: #fdf8e1;
+    background-color: #fdf8e1; /* Kuning sangat muda untuk background container */
     border-radius: 25px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     padding: 25px;
     text-align: center;
-    max-width: 300px;
-    width: 90%;
+    width: 300px; /* <<< PERBAIKAN PENTING: Set lebar tetap */
+    /* max-width: 300px;  <<< HAPUS/KOMENTARI INI */
+    /* width: 90%;      <<< HAPUS/KOMENTARI INI */
     position: relative;
     overflow: hidden;
     cursor: grab;
     border: 5px solid #f9ed85; /* Border kuning cerah sebagai aksen */
+    flex-shrink: 0; /* Mencegah container menyusut lebih dari yang diinginkan */
 }
 
 .container:active {
@@ -43,15 +46,15 @@ body {
 
 
 /* --- Karakter Lucu (chara) --- */
-.chara-character { /* <<< PERBAIKAN: Ubah dari .chara-character menjadi .chara-character */
+.chara-character {
     width: 120px;
     height: auto;
-    margin-top: -35px;
+    margin-top: -50px;
     margin-bottom: 15px;
     animation: bounce 2s infinite ease-in-out;
-    image-rendering: crisp-edges; /* Penting untuk menjaga ketajaman pixel art */
-    image-rendering: -webkit-optimize-contrast; /* Untuk Safari */
-    image-rendering: pixelated; /* Untuk browser modern */
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
 }
 
 @keyframes bounce {
@@ -67,8 +70,8 @@ body {
 h1 {
     color: #a99abd; /* Ungu sedang */
     margin-bottom: 20px;
-    font-size: 1.5em; /* Lebih kecil sedikit agar pas dengan font pixel */
-    text-shadow: 2px 2px 0px #fcfdaf; /* Shadow kuning untuk efek pixel art */
+    font-size: 1.5em;
+    text-shadow: 2px 2px 0px #fcfdaf;
 }
 
 /* --- Timer Section --- */
@@ -81,35 +84,35 @@ h1 {
 }
 
 .timer-section p {
-    font-size: 0.9em; /* Sesuaikan ukuran font */
+    font-size: 0.9em;
     color: #4f3757;
     margin-bottom: 8px;
-    line-height: 1.5; /* Jarak baris untuk keterbacaan font pixel */
+    line-height: 1.5;
 }
 
 .timer-section span {
     font-weight: bold;
     color: #a99abd; /* Ungu untuk waktu */
-    font-size: 1.1em; /* Sedikit lebih besar */
+    font-size: 1.1em;
 }
 
 input[type="number"] {
-    width: calc(100% - 20px);
+    width: calc(100% - 20px); /* Lebar input, dikurangi padding */
     padding: 10px;
     margin-top: 15px;
     margin-bottom: 15px;
-    border: 3px solid #a99abd; /* Ungu */
+    border: 3px solid #a99abd;
     border-radius: 10px;
     font-size: 1em;
     text-align: center;
     outline: none;
-    background-color: #ffffe0; /* Kuning sangat muda */
+    background-color: #ffffe0;
     color: #4f3757;
     font-family: 'Press Start 2P', cursive, sans-serif;
 }
 
 input[type="number"]:focus {
-    border-color: #f9ed85; /* Kuning saat fokus */
+    border-color: #f9ed85;
 }
 
 button {
@@ -118,7 +121,7 @@ button {
     border: none;
     border-radius: 15px;
     padding: 12px 20px;
-    font-size: 0.9em; /* Sesuaikan ukuran font */
+    font-size: 0.9em;
     cursor: pointer;
     margin: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -128,7 +131,7 @@ button {
 }
 
 button:hover {
-    background-color: #a25cff; /* Ungu sedikit lebih terang saat hover */
+    background-color: #a25cff;
     transform: translateY(-2px);
 }
 
@@ -144,7 +147,7 @@ button:active {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(138, 43, 226, 0.3); /* Ungu transparan */
+    background-color: rgba(138, 43, 226, 0.3);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,7 +157,7 @@ button:active {
 }
 
 .popup-content {
-    background-color: #ffffe0; /* Kuning sangat muda untuk pop-up */
+    background-color: #ffffe0;
     padding: 30px;
     border-radius: 20px;
     text-align: center;
@@ -162,7 +165,7 @@ button:active {
     position: relative;
     max-width: 350px;
     animation: fadeInScale 0.3s ease-out;
-    border: 5px solid #e6deec; /* Border ungu untuk pop-up */
+    border: 5px solid #e6deec;
 }
 
 @keyframes fadeInScale {
@@ -177,10 +180,22 @@ button:active {
 }
 
 .popup-content p {
-    font-size: 1em; /* Sesuaikan ukuran font */
+    font-size: 1em;
     color: #4f3757;
     margin-bottom: 20px;
-    line-height: 1.6; /* Lebih lega untuk keterbacaan */
+    line-height: 1.6;
+}
+
+/* .popup-chara sudah dihapus dari HTML, jadi aturan ini bisa dihapus */
+/*
+.popup-chara {
+    width: 100px;
+    height: auto;
+    margin-top: 15px;
+    animation: float 3s infinite ease-in-out;
+    image-rendering: crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: pixelated;
 }
 
 @keyframes float {
@@ -191,19 +206,20 @@ button:active {
         transform: translateY(-8px);
     }
 }
+*/
 
 .close-popup {
     position: absolute;
     top: 10px;
     right: 15px;
     font-size: 2em;
-    color: #8338c0; /* Ungu untuk tombol silang */
+    color: #8338c0;
     cursor: pointer;
     transition: color 0.2s ease;
 }
 
 .close-popup:hover {
-    color: #f9ed85; /* Kuning saat hover */
+    color: #f9ed85;
 }
 
 /* --- Pastikan semua teks menggunakan font pixel kecuali jika ada override --- */
